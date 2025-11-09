@@ -1,6 +1,10 @@
 "use client";
 import React, { useState } from "react";
-import { FaMapMarkerAlt, FaPhone, FaEnvelope, FaChevronDown, FaSearch, FaBars, FaTimes, FaFacebookF, FaTwitter, FaInstagram, FaYoutube } from "react-icons/fa";
+import Image from "next/image";
+import {
+    FaMapMarkerAlt, FaPhone, FaEnvelope, FaChevronDown, FaSearch, FaBars, FaTimes,
+    FaFacebookF, FaTwitter, FaInstagram, FaYoutube
+} from "react-icons/fa";
 import { CiLock } from "react-icons/ci";
 
 const Navbar = () => {
@@ -16,18 +20,21 @@ const Navbar = () => {
     ];
 
     return (
-        <header className="w-full bg-gray-900 font-sans">
-
-
+        <header className="w-full bg-[#212121]">
             {/* Main Navigation */}
-            <nav className="max-w-7xl mx-auto px-4 sm:px-8 flex justify-between items-center py-4 bg-gray-900">
+            <nav className="max-w-7xl mx-auto px-4 sm:px-8 flex justify-between items-center py-4">
+
                 {/* Logo */}
                 <div className="flex items-center">
-                    {/* Replace with your actual logo */}
-                    <div className="w-10 h-10 bg-[#97f03d] rounded flex items-center justify-center text-white font-bold text-lg mr-2">
-                        A
+                    <div className="w-16 h-16 relative mr-3">
+                        <Image
+                            src="/images/aqua-logo.png"
+                            alt="AQUASSA Logo"
+                            fill
+                            className="object-contain"
+                        />
                     </div>
-                    <span className="text-xl font-bold text-white">AQUASSA</span>
+
                 </div>
 
                 {/* Desktop Menu */}
@@ -36,7 +43,7 @@ const Navbar = () => {
                         <div key={item.name} className="relative group">
                             <button
                                 onClick={() => setActiveNav(item.name)}
-                                className={`flex items-center gap-1 py-2 text-sm font-medium transition ${activeNav === item.name ? 'text-white' : 'text-gray-300 hover:text-white'
+                                className={`flex items-center gap-1 py-2 text-sm font-medium transition ${activeNav === item.name ? 'text-[#97f03d]' : 'text-gray-300 hover:text-white'
                                     }`}
                             >
                                 {item.name}
@@ -45,19 +52,18 @@ const Navbar = () => {
 
                             {/* Active indicator */}
                             {activeNav === item.name && (
-                                <div className="absolute  left-0 w-full h-1 bg-[#97f03d]"></div>
+                                <div className="absolute left-0 w-full h-1 bg-[#97f03d]"></div>
                             )}
                         </div>
                     ))}
-                    {/* Search Button */}
+                    {/* Lock/Search Button */}
                     <div className="hidden md:flex items-center">
-                        <button className="w-12 h-12 bg-[#97f03d] flex items-center justify-center rounded-lg hover:bg-green-500 transition">
-                            <CiLock  className="w-5 h-5 text-gray-900" />
+                        <button className="w-12 h-12 bg-[#97f03d] flex items-center justify-center rounded-lg transition hover:bg-transparent">
+                            <CiLock className="w-5 h-5 text-gray-900 hover:text-[#97f03d] transition" />
                         </button>
                     </div>
+
                 </div>
-
-
 
                 {/* Mobile Menu Button */}
                 <button
@@ -66,9 +72,6 @@ const Navbar = () => {
                 >
                     {open ? <FaTimes /> : <FaBars />}
                 </button>
-
-
-
 
                 {/* Mobile Menu */}
                 {open && (
@@ -93,13 +96,13 @@ const Navbar = () => {
                         </button>
                     </div>
                 )}
-
             </nav>
+
             {/* Top Contact Bar */}
             <div className="bg-[#97f03d] py-2 text-sm text-gray-900">
                 <div className="max-w-7xl mx-auto px-4 sm:px-8 flex flex-col sm:flex-row justify-between items-center gap-2">
                     <div className="flex flex-wrap justify-center sm:justify-start items-center gap-4 sm:gap-6 font-semibold">
-                        <div className="flex items-center ">
+                        <div className="flex items-center gap-1">
                             <FaMapMarkerAlt className="w-4 h-4" />
                             <p>4934 Blackwell Street, SA</p>
                         </div>
@@ -118,7 +121,7 @@ const Navbar = () => {
                             <a
                                 key={index}
                                 href="#"
-                                className="w-7 h-7 bg-green-600 flex items-center justify-center text-white text-xs rounded hover:opacity-80 transition"
+                                className="w-7 h-7 bg-[#49b94e] flex items-center justify-center text-white text-xs rounded hover:opacity-80 transition"
                             >
                                 <Icon className="w-3 h-3" />
                             </a>
