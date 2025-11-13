@@ -26,7 +26,7 @@ const Navbar = () => {
 
                 {/* Logo */}
                 <div className="flex items-center">
-                    <div className="w-16 h-16 relative mr-3">
+                    <div className="w-20 h-20 relative mr-3">
                         <Image
                             src="/images/aqua-logo.png"
                             alt="AQUASSA Logo"
