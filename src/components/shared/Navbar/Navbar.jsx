@@ -1,6 +1,7 @@
 "use client";
 import React, { useState } from "react";
 import Image from "next/image";
+import { useRouter, usePathname } from "next/navigation";
 import {
     FaMapMarkerAlt, FaPhone, FaEnvelope, FaChevronDown, FaSearch, FaBars, FaTimes,
     FaFacebookF, FaTwitter, FaInstagram, FaYoutube
@@ -9,15 +10,27 @@ import { CiLock } from "react-icons/ci";
 
 const Navbar = () => {
     const [open, setOpen] = useState(false);
-    const [activeNav, setActiveNav] = useState("Home");
+    const router = useRouter();
+    const pathname = usePathname();
 
     const navItems = [
-        { name: "Home", hasDropdown: false },
-        { name: "About Us", hasDropdown: true },
-        { name: "Service", hasDropdown: false },
-        { name: "Pages", hasDropdown: true },
-        { name: "Contact", hasDropdown: false }
+        { name: "Home", hasDropdown: false, path: "/" },
+        { name: "About Us", hasDropdown: true, path: "/about-us" },
+        { name: "Service", hasDropdown: false, path: "/service" },
+        { name: "Pages", hasDropdown: true, path: "/pages" },
+        { name: "Contact", hasDropdown: false, path: "/contact" }
     ];
+
+    // Determine active nav based on current path
+    const getActiveNav = () => {
+        const currentItem = navItems.find(item => item.path === pathname);
+        return currentItem ? currentItem.name : "Home";
+    };
+
+    const handleNavigation = (path) => {
+        router.push(path);
+        setOpen(false);
+    };
 
     return (
         <header className="w-full bg-[#212121]">
@@ -34,7 +47,6 @@ const Navbar = () => {
                             className="object-contain"
                         />
                     </div>
-
                 </div>
 
                 {/* Desktop Menu */}
@@ -42,8 +54,8 @@ const Navbar = () => {
                     {navItems.map((item) => (
                         <div key={item.name} className="relative group">
                             <button
-                                onClick={() => setActiveNav(item.name)}
-                                className={`flex items-center gap-1 py-2 text-sm font-medium transition ${activeNav === item.name ? 'text-[#97f03d]' : 'text-gray-300 hover:text-white'
+                                onClick={() => handleNavigation(item.path)}
+                                className={`flex items-center gap-1 py-2 text-sm font-medium transition cursor-pointer ${getActiveNav() === item.name ? 'text-[#97f03d]' : 'text-gray-300 hover:text-white'
                                     }`}
                             >
                                 {item.name}
@@ -51,7 +63,7 @@ const Navbar = () => {
                             </button>
 
                             {/* Active indicator */}
-                            {activeNav === item.name && (
+                            {getActiveNav() === item.name && (
                                 <div className="absolute left-0 w-full h-1 bg-[#97f03d]"></div>
                             )}
                         </div>
@@ -62,7 +74,6 @@ const Navbar = () => {
                             <CiLock className="w-5 h-5 text-gray-900 hover:text-[#97f03d] transition" />
                         </button>
                     </div>
-
                 </div>
 
                 {/* Mobile Menu Button */}
@@ -79,11 +90,8 @@ const Navbar = () => {
                         {navItems.map((item) => (
                             <button
                                 key={item.name}
-                                onClick={() => {
-                                    setActiveNav(item.name);
-                                    setOpen(false);
-                                }}
-                                className={`flex items-center justify-between w-full py-3 text-left border-b border-gray-700 ${activeNav === item.name ? 'text-[#97f03d]' : 'text-gray-300'
+                                onClick={() => handleNavigation(item.path)}
+                                className={`flex items-center justify-between w-full py-3 text-left border-b border-gray-700 ${getActiveNav() === item.name ? 'text-[#97f03d]' : 'text-gray-300'
                                     }`}
                             >
                                 {item.name}
