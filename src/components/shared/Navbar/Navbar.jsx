@@ -3,38 +3,59 @@ import React, { useState } from "react";
 import Image from "next/image";
 import { useRouter, usePathname } from "next/navigation";
 import {
-    FaMapMarkerAlt, FaPhone, FaEnvelope, FaChevronDown, FaSearch, FaBars, FaTimes,
+    FaMapMarkerAlt, FaPhone, FaEnvelope, FaChevronDown, FaBars, FaTimes,
     FaFacebookF, FaTwitter, FaInstagram, FaYoutube
 } from "react-icons/fa";
 import { CiLock } from "react-icons/ci";
 
 const Navbar = () => {
     const [open, setOpen] = useState(false);
+    const [mobileDropdown, setMobileDropdown] = useState(null);
+
     const router = useRouter();
     const pathname = usePathname();
 
     const navItems = [
-        { name: "Home", hasDropdown: false, path: "/" },
-        { name: "About Us", hasDropdown: true, path: "/about-us" },
-        { name: "Service", hasDropdown: false, path: "/service" },
-        { name: "Pages", hasDropdown: true, path: "/pages" },
-        { name: "Contact", hasDropdown: false, path: "/contact" }
+        { name: "Home", path: "/", hasDropdown: false },
+
+        {
+            name: "About Us",
+            path: "/about-us",
+            hasDropdown: true,
+            dropdown: [
+                { name: "Team", path: "/team" }
+            ],
+        },
+
+        { name: "Service", path: "/service", hasDropdown: false },
+
+        {
+            name: "Pages",
+            path: "#",
+            hasDropdown: true,
+            dropdown: [
+                { name: "Shop", path: "/shop" },
+                { name: "Pricing", path: "/pricing" },
+                { name: "Gallery", path: "/gallery" },
+                { name: "FAQ", path: "/faq" }
+            ],
+        },
+
+        { name: "Contact", path: "/contact", hasDropdown: false }
     ];
 
-    // Determine active nav based on current path
     const getActiveNav = () => {
-        const currentItem = navItems.find(item => item.path === pathname);
-        return currentItem ? currentItem.name : "Home";
+        const found = navItems.find((item) => item.path === pathname);
+        return found ? found.name : "Home";
     };
 
     const handleNavigation = (path) => {
-        router.push(path);
+        if (path !== "#") router.push(path);
         setOpen(false);
     };
 
     return (
         <header className="w-full bg-[#212121]">
-            {/* Main Navigation */}
             <nav className="max-w-7xl mx-auto px-4 sm:px-8 flex justify-between items-center py-4">
 
                 {/* Logo */}
@@ -55,56 +76,84 @@ const Navbar = () => {
                         <div key={item.name} className="relative group">
                             <button
                                 onClick={() => handleNavigation(item.path)}
-                                className={`flex items-center gap-1 py-2 text-sm font-medium transition cursor-pointer ${getActiveNav() === item.name ? 'text-[#97f03d]' : 'text-gray-300 hover:text-white'
+                                className={`flex items-center gap-1 py-2 text-sm font-medium transition cursor-pointer ${getActiveNav() === item.name
+                                        ? "text-[#97f03d]"
+                                        : "text-gray-100 hover:text-white"
                                     }`}
                             >
                                 {item.name}
                                 {item.hasDropdown && <FaChevronDown className="w-3 h-3" />}
                             </button>
 
-                            {/* Active indicator */}
+                            {/* Hover Dropdown */}
+                            {item.hasDropdown && (
+                                <div className="absolute left-0 top-full bg-[#212121] border border-gray-700 shadow-md rounded hidden group-hover:block min-w-[130px] z-20">
+                                    {item.dropdown.map((sub) => (
+                                        <button
+                                            key={sub.name}
+                                            onClick={() => router.push(sub.path)}
+                                            className="block w-full text-left px-4 py-2 text-gray-100 hover:text-[#49b94e] "
+                                        >
+                                            {sub.name}
+                                        </button>
+                                    ))}
+                                </div>
+                            )}
+
                             {getActiveNav() === item.name && (
                                 <div className="absolute left-0 w-full h-1 bg-[#97f03d]"></div>
                             )}
                         </div>
                     ))}
-                    {/* Lock/Search Button */}
-                    <div className="hidden md:flex items-center">
-                        <button className="w-12 h-12 bg-[#97f03d] flex items-center justify-center rounded-lg transition hover:bg-transparent">
-                            <CiLock className="w-5 h-5 text-gray-900 hover:text-[#97f03d] transition" />
-                        </button>
-                    </div>
+
+                    {/* Lock Button */}
+                    <button className="w-12 h-12 bg-[#97f03d] flex items-center justify-center rounded-lg transition hover:bg-transparent">
+                        <CiLock className="w-5 h-5 text-gray-900 hover:text-[#97f03d] transition" />
+                    </button>
                 </div>
 
                 {/* Mobile Menu Button */}
-                <button
-                    className="md:hidden text-white text-2xl"
-                    onClick={() => setOpen(!open)}
-                >
+                <button className="md:hidden text-white text-2xl" onClick={() => setOpen(!open)}>
                     {open ? <FaTimes /> : <FaBars />}
                 </button>
+            </nav>
 
-                {/* Mobile Menu */}
-                {open && (
-                    <div className="absolute top-full left-0 w-full bg-gray-900 md:hidden py-4 px-6 shadow-lg">
-                        {navItems.map((item) => (
+            {/* Mobile Menu */}
+            {open && (
+                <div className="md:hidden w-full bg-gray-900 py-4 px-6 shadow-lg">
+                    {navItems.map((item) => (
+                        <div key={item.name} className="border-b border-gray-700">
                             <button
-                                key={item.name}
-                                onClick={() => handleNavigation(item.path)}
-                                className={`flex items-center justify-between w-full py-3 text-left border-b border-gray-700 ${getActiveNav() === item.name ? 'text-[#97f03d]' : 'text-gray-300'
+                                onClick={() =>
+                                    item.hasDropdown
+                                        ? setMobileDropdown(mobileDropdown === item.name ? null : item.name)
+                                        : handleNavigation(item.path)
+                                }
+                                className={`flex items-center justify-between w-full py-3 text-left ${getActiveNav() === item.name ? "text-[#97f03d]" : "text-gray-100"
                                     }`}
                             >
                                 {item.name}
                                 {item.hasDropdown && <FaChevronDown className="w-3 h-3" />}
                             </button>
-                        ))}
-                        <button className="w-full mt-4 py-3 bg-[#97f03d] text-gray-900 rounded-lg font-semibold flex items-center justify-center gap-2">
-                            <FaSearch className="w-4 h-4" />
-                            Search
-                        </button>
-                    </div>
-                )}
-            </nav>
+
+                            {/* Mobile Dropdown */}
+                            {item.hasDropdown && mobileDropdown === item.name && (
+                                <div className="pl-4 pb-2">
+                                    {item.dropdown.map((sub) => (
+                                        <button
+                                            key={sub.name}
+                                            onClick={() => handleNavigation(sub.path)}
+                                            className="block w-full text-left py-2 text-gray-400 hover:text-white"
+                                        >
+                                            {sub.name}
+                                        </button>
+                                    ))}
+                                </div>
+                            )}
+                        </div>
+                    ))}
+                </div>
+            )}
 
             {/* Top Contact Bar */}
             <div className="bg-[#97f03d] py-2 text-sm text-gray-900">
@@ -125,9 +174,9 @@ const Navbar = () => {
                     </div>
 
                     <div className="flex gap-2">
-                        {[FaFacebookF, FaTwitter, FaInstagram, FaYoutube].map((Icon, index) => (
+                        {[FaFacebookF, FaTwitter, FaInstagram, FaYoutube].map((Icon, i) => (
                             <a
-                                key={index}
+                                key={i}
                                 href="#"
                                 className="w-7 h-7 bg-[#49b94e] flex items-center justify-center text-white text-xs rounded hover:opacity-80 transition"
                             >
