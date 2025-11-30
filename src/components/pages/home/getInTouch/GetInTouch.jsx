@@ -3,7 +3,7 @@ import React from 'react';
 export function GetInTouch() {
     return (
         <section 
-            className="relative bg-cover bg-fixed bg-center py-20" 
+            className="relative bg-cover bg-fixed bg-center py-20 mt-[100px]" 
             style={{ backgroundImage: "url('/images/get-in-touch.jpg')" }}
         >
             {/* Base black overlay */}

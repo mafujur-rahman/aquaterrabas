@@ -1,3 +1,4 @@
+"use client";
 import Image from 'next/image';
 
 const galleryItems = [
@@ -41,19 +42,24 @@ const galleryItems = [
 
 const Gallery = () => {
   return (
-    <section className="py-16 bg-white">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <h2 className="text-4xl font-bold text-gray-800 text-center mb-4">Gallery</h2>
-        <p className="text-center text-gray-600 mb-12 max-w-6xl mx-auto">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus, luctus nec ullamcorper mattis, pulvinar dapibus leo. Sed urna lacus, egestas a pellentesque vel, ornare at est. Vestibulum elit eros, mattis ac ultricies consequat, malesuada eget nisi.
+    <section className="mt-[100px] bg-white">
+      <div className="w-full px-[20px] md:px-[30px] lg:px-[30px] xl:max-w-7xl xl:mx-auto">
+        {/* Section Header */}
+        <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-800 text-center mb-4">
+          Gallery
+        </h2>
+        <p className="text-center text-gray-600 text-sm sm:text-base md:text-lg mb-12 max-w-4xl mx-auto">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus, luctus nec
+          ullamcorper mattis, pulvinar dapibus leo. Sed urna lacus, egestas a pellentesque vel, ornare at est. 
+          Vestibulum elit eros, mattis ac ultricies consequat, malesuada eget nisi.
         </p>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+        {/* Gallery Grid */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 sm:gap-8">
           {galleryItems.map((item, index) => (
             <div
               key={index}
-              className="relative group rounded-lg overflow-hidden shadow-lg"
-              style={{ height: '350px' }}
+              className="relative group rounded-lg overflow-hidden shadow-lg h-64 sm:h-72 md:h-80 lg:h-96"
             >
               {/* Image */}
               <Image
@@ -66,10 +72,10 @@ const Gallery = () => {
               {/* Black overlay fade-in */}
               <div className="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
 
-
-              <div className="absolute inset-0 flex flex-col   transform translate-y-full group-hover:translate-y-3/8 transition-transform duration-500 px-4">
-                <h3 className="text-white text-xl font-bold mb-2">{item.title}</h3>
-                <p className="text-white text-sm">{item.description}</p>
+              {/* Text overlay */}
+              <div className="absolute inset-0 flex flex-col justify-end transform translate-y-full group-hover:translate-y-0 transition-transform duration-500 px-4 pb-4 sm:pb-6">
+                <h3 className="text-white text-lg sm:text-xl font-bold mb-1">{item.title}</h3>
+                <p className="text-white text-xs sm:text-sm">{item.description}</p>
               </div>
             </div>
           ))}

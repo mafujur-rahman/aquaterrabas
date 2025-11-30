@@ -4,7 +4,7 @@ import Image from "next/image";
 
 const Testimonial = () => {
   return (
-    <section className="relative bg-white py-20 px-4 sm:px-6 lg:px-8">
+    <section className="relative bg-white  mt-[100px]">
       {/* Background image */}
       <div className="absolute inset-0">
         <Image
@@ -17,17 +17,22 @@ const Testimonial = () => {
         <div className="absolute inset-0 bg-black opacity-70"></div>
       </div>
 
-      <div className="relative z-10 max-w-7xl mx-auto text-center">
-        <p className="text-[#97f03d] text-6xl font-extrabold mb-10">&ldquo;</p>
-        <p className="text-white text-lg sm:text-xl md:text-2xl leading-relaxed mb-12 italic">
+      <div className="relative z-10 text-center py-16 sm:py-20 px-[20px] md:px-[30px] lg:px-[30px] xl:max-w-7xl xl:mx-auto">
+        {/* Quote Symbol */}
+        <p className="text-[#97f03d] text-5xl sm:text-6xl font-extrabold mb-8 sm:mb-10">&ldquo;</p>
+
+        {/* Testimonial Text */}
+        <p className="text-white text-base sm:text-lg md:text-xl lg:text-2xl leading-relaxed mb-10 sm:mb-12 italic">
           Aliquam lacinia enim et tellus tristique, sed bibendum nisl sagittis. Sed vel odio vel
           li. Nullam velit purus, convallis vel orci et, lacinia congue neque. Praesent dapibus
           massa eu metus viverra. Vitae ullamcorper lacus vehicula. Morbi interdum m porttitor est,
           sed venenatis leo luctus vitae. Pellentesque ornare nisi et ornare facilisis.
         </p>
 
+        {/* Person Info */}
         <div className="flex flex-col items-center">
-          <div className="w-20 h-20 rounded-full overflow-hidden border-2 border-[#97f03d] mb-4 relative">
+          {/* Profile Image */}
+          <div className="w-16 h-16 sm:w-20 sm:h-20 rounded-full overflow-hidden border-2 border-[#97f03d] mb-3 sm:mb-4 relative">
             <Image
               src="/images/person.jpg"
               alt="Dhina Fransisca"
@@ -35,13 +40,16 @@ const Testimonial = () => {
               className="object-cover"
             />
           </div>
-          <p className="text-white font-semibold text-lg">Dhina Fransisca</p>
-          <p className="text-[#97f03d] text-sm mb-4">Designer</p>
-          <div className="flex justify-center">
+
+          <p className="text-white font-semibold text-base sm:text-lg">Dhina Fransisca</p>
+          <p className="text-[#97f03d] text-xs sm:text-sm mb-2 sm:mb-4">Designer</p>
+
+          {/* Stars */}
+          <div className="flex justify-center space-x-1">
             {[...Array(5)].map((_, i) => (
               <svg
                 key={i}
-                className="h-5 w-5 text-yellow-400"
+                className="h-4 w-4 sm:h-5 sm:w-5 text-yellow-400"
                 fill="currentColor"
                 viewBox="0 0 20 20"
               >
