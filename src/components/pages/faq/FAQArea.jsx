@@ -31,31 +31,31 @@ const faqs = [
 
 const FAQArea = () => {
   return (
-    <section className="w-full flex justify-center py-20 px-4">
-      <div className="max-w-7xl w-full">
+    <section className="w-full flex justify-center mt-[100px] px-[20px] md:px-[30px] lg:px-[30px] xl:max-w-7xl xl:mx-auto">
+      <div className="w-full">
+
         {/* Top Section */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-10 items-center mb-20">
-          
+        <div className="flex flex-col md:flex-row items-center  gap-10 lg:gap-16 mb-20">
+
           {/* Image */}
-          <div className="flex justify-center">
+          <div className="w-full md:w-1/2 flex justify-center">
             <Image
-              src="/images/faq-area.jpg" 
+              src="/images/faq-area.jpg"
               alt="FAQ Image"
               width={550}
               height={400}
-              className="rounded-xl object-cover"
+              className="rounded-xl object-cover w-full h-auto"
             />
           </div>
 
           {/* Text */}
-          <div>
-            <h2 className="text-[34px] md:text-[38px] font-semibold text-[#0F172A] mb-4">
+          <div className="w-full md:w-1/2">
+            <h2 className="text-3xl sm:text-4xl md:text-[38px] font-semibold text-[#0F172A] mb-4">
               Whats in your mind?
             </h2>
-
-            <p className="text-gray-600 leading-relaxed max-w-md">
+            <p className="text-gray-600 leading-relaxed max-w-full md:max-w-md">
               Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit
-              tellus, luctus nec ullamcorper mattis, pulvinar dapibus leo.Aliquam
+              tellus, luctus nec ullamcorper mattis, pulvinar dapibus leo. Aliquam
               eget rutrum orci, eu hendrerit arcu. Sed et consectetur diam.
               Ut fringilla egestas lectus, in tincidunt magna porta vitae.
             </p>
@@ -63,7 +63,7 @@ const FAQArea = () => {
         </div>
 
         {/* FAQ Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-5">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8 lg:gap-5">
           {faqs.map((f, i) => (
             <div
               key={i}
@@ -78,6 +78,7 @@ const FAQArea = () => {
             </div>
           ))}
         </div>
+
       </div>
     </section>
   );

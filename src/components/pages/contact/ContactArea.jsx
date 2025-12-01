@@ -2,7 +2,7 @@ import Head from 'next/head';
 
 export default function ContactArea() {
     return (
-        <div className=" bg-white flex items-center justify-center py-12">
+        <div className=" bg-white flex items-center justify-center my-[100px] ">
             <Head>
                 <title>Get in touch</title>
                 <link rel="icon" href="/favicon.ico" />

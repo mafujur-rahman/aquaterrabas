@@ -4,7 +4,7 @@ import { useEffect, useRef, useState } from 'react';
 export function AboutStats() {
     return (
         <div
-            className="w-full bg-[#121212] text-white py-20 relative bg-cover bg-center bg-no-repeat "
+            className="w-full bg-[#121212] text-white py-20 relative bg-cover bg-center bg-no-repeat mt-[100px] "
             style={{
                 backgroundImage: 'url("/images/02.png")'
             }}
@@ -13,7 +13,7 @@ export function AboutStats() {
             <div className="absolute inset-0 bg-black/40"></div>
 
             {/* Content */}
-            <div className="relative z-10 max-w-7xl mx-auto px-4 grid grid-cols-2 md:grid-cols-4 gap-10 text-center">
+            <div className="relative z-10 px-[20px] md:px-[30px] lg:px-[30px] xl:max-w-7xl xl:mx-auto grid grid-cols-2 md:grid-cols-4 gap-10 text-center">
                 <StatBox number={67} label="Completed Project" suffix="+" />
                 <StatBox number={30} label="Professional Team" />
                 <StatBox number={12} label="Years Experience" />

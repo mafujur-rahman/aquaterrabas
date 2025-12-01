@@ -2,7 +2,7 @@ import React from 'react';
 import Image from 'next/image';
 
 const Star = ({ filled }) => (
-    <span className={`text-xl ${filled ? 'text-yellow-500' : 'text-gray-300'}`}>
+    <span className={`text-lg sm:text-xl ${filled ? 'text-yellow-500' : 'text-gray-300'}`}>
         ★
     </span>
 );
@@ -12,7 +12,7 @@ const StarRating = ({ rating }) => {
         <Star key={index} filled={index < rating} />
     ));
     return (
-        <div className="flex justify-center my-2 text-xl">
+        <div className="flex justify-center my-2">
             {stars}
         </div>
     );
@@ -20,15 +20,20 @@ const StarRating = ({ rating }) => {
 
 export function Review() {
     return (
-        <div className="max-w-7xl mx-auto py-16 px-4 text-center">
-            <h2 className="text-5xl font-bold">
+        <div className="px-[20px] md:px-[30px] lg:px-[30px] xl:max-w-7xl xl:mx-auto mt-[100px] text-center">
+            
+            {/* Heading */}
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold">
                 Our Review
             </h2>
-            <p className="text-base text-gray-600 mt-4 max-w-6xl mx-auto leading-relaxed px-4">
+
+            {/* Subtext */}
+            <p className="text-sm sm:text-base text-gray-600 mt-4 max-w-2xl mx-auto leading-relaxed">
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. luctus nec ullamcorper mattis, pulvinar dapibus leo.
             </p>
 
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-12">
+            {/* Cards Grid */}
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 mt-12">
                 <ReviewCard
                     name="Donna Yen"
                     role="Freelancer"
@@ -57,29 +62,34 @@ export function Review() {
 
 function ReviewCard({ img, name, role, rating, reviewText }) {
     return (
-        <div className="bg-white rounded-xl p-8 shadow-xl transition duration-300 ease-in-out hover:shadow-2xl">
-            <div className="relative inline-block">
-                <div className="w-24 h-24 rounded-full mx-auto border-4 border-white ring-4 ring-[#49b94e] overflow-hidden">
-                    <Image
-                        src={img}
-                        alt={name}
-                        width={96}
-                        height={96}
-                        className="object-cover w-full h-full"
-                    />
-                </div>
+        <div className="bg-white rounded-2xl p-6 sm:p-8 shadow-md hover:shadow-2xl transition duration-300 ease-in-out">
+            
+            {/* Image */}
+            <div className="w-24 h-24 mx-auto rounded-full border-4 border-white ring-4 ring-[#49b94e] overflow-hidden">
+                <Image
+                    src={img}
+                    alt={name}
+                    width={96}
+                    height={96}
+                    className="object-cover w-full h-full"
+                />
             </div>
 
-            <h3 className="mt-6 text-xl font-bold text-gray-800">
+            {/* Name */}
+            <h3 className="mt-6 text-lg sm:text-xl font-bold text-gray-800">
                 {name}
             </h3>
-            <p className="text-lg font-medium text-[#49b94e] mt-1">
+
+            {/* Role */}
+            <p className="text-base font-medium text-[#49b94e] mt-1">
                 {role}
             </p>
 
+            {/* Star Rating */}
             <StarRating rating={rating} />
 
-            <p className="text-lg text-gray-600 mt-4 leading-relaxed px-2">
+            {/* Review Text */}
+            <p className="text-sm sm:text-base text-gray-600 mt-4 leading-relaxed px-1 sm:px-3">
                 {reviewText}
             </p>
         </div>

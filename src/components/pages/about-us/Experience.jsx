@@ -44,14 +44,10 @@ const ProgressBar = ({ label, percentage }) => {
                 <span className="text-gray-600">{label}</span>
                 <span className="text-xs font-semibold text-[#97f03d]">{animatedPercentage}%</span>
             </div>
-            <div className="w-full bg-gray-200 h-3.5 overflow-hidden">
+            <div className="w-full bg-gray-200 h-3 rounded-full overflow-hidden">
                 <div
-                    className="bg-[#97f03d] h-3.5 transition-all duration-100 ease-out shadow-inner"
+                    className="bg-[#97f03d] h-3 transition-all duration-150 ease-out rounded-full"
                     style={{ width: `${animatedPercentage}%` }}
-                    role="progressbar"
-                    aria-valuenow={animatedPercentage}
-                    aria-valuemin="0"
-                    aria-valuemax="100"
                 />
             </div>
         </div>
@@ -59,8 +55,8 @@ const ProgressBar = ({ label, percentage }) => {
 };
 
 export function Experience() {
-    const experienceText = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed lacinia sit amet ipsum et imperdiet. Vivamus mauris tellus, faucibus eu velit eu, volutpat varius erat. Aenean in turpis quam. Maecenas scelerisque convallis turpis, id laoreet augue varius ut. Pellentesque nec metus at diam facilisis pretium. Donec non mattis metus. Nullam rutrum eleifend odio et consectetur. In ornare rutrum condimentum.";
-    const projectsText = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed lacinia sit amet ipsum et imperdiet. Vivamus mauris tellus, faucibus eu velit eu, volutpat varius erat. Aenean in turpis quam. volutpat varius erat. Aenean in turpis quam.";
+    const experienceText = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed lacinia sit amet ipsum et imperdiet. Vivamus mauris tellus, faucibus eu velit eu, volutpat varius erat. Aenean in turpis quam. Maecenas scelerisque convallis turpis, id laoreet augue varius ut.";
+    const projectsText = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed lacinia sit amet ipsum et imperdiet. Vivamus mauris tellus, faucibus eu velit eu, volutpat varius erat. Aenean in turpis quam.";
 
     const progressData = [
         { label: "Satisfied Customers", percentage: 97 },
@@ -69,39 +65,45 @@ export function Experience() {
     ];
 
     return (
-        <div className="bg-white py-20">
-            <div className="max-w-7xl w-full mx-auto px-4 sm:px-6 lg:px-8">
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-x-16 gap-y-12">
+        <div className="bg-white mt-[100px]">
+            <div className="px-[20px] md:px-[30px] lg:px-[30px] xl:max-w-7xl xl:mx-auto">
+
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-10 lg:gap-16">
+
+                    {/* Left Image */}
                     <div className="relative overflow-hidden rounded-3xl shadow-lg">
                         <Image
-                            src='/images/why-choose-us.jpg'
+                            src="/images/why-choose-us.jpg"
                             alt="Experienced Team"
-                            width={600}
-                            height={350}
-                            className="w-full h-full max-h-[350px] object-cover"
+                            width={700}
+                            height={450}
+                            className="w-full h-auto max-h-[380px] object-cover"
                             priority
                         />
                     </div>
 
+                    {/* Experience Text */}
                     <div className="flex flex-col justify-center">
-                        <h2 className="text-3xl sm:text-5xl lg:text-5xl font-bold mb-4">
+                        <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-4 leading-tight">
                             Our Experience so Far
                         </h2>
-                        <p className="text-base text-gray-600 leading-relaxed">
+                        <p className="text-base sm:text-lg text-gray-600 leading-relaxed">
                             {experienceText}
                         </p>
                     </div>
 
-                    <div className="flex flex-col justify-start">
-                        <h2 className="text-3xl sm:text-5xl lg:text-5xl font-bold mb-4">
+                    {/* Projects Text */}
+                    <div className="flex flex-col justify-center">
+                        <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-4 leading-tight">
                             Our Projects
                         </h2>
-                        <p className="text-base text-gray-600 leading-relaxed">
+                        <p className="text-base sm:text-lg text-gray-600 leading-relaxed">
                             {projectsText}
                         </p>
                     </div>
 
-                    <div className="space-y-7 flex flex-col  justify-start pt-2">
+                    {/* Progress Bars */}
+                    <div className="space-y-7 flex flex-col justify-start pt-2">
                         {progressData.map((item) => (
                             <ProgressBar
                                 key={item.label}
@@ -110,7 +112,9 @@ export function Experience() {
                             />
                         ))}
                     </div>
+
                 </div>
+
             </div>
         </div>
     );

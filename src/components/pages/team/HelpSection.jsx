@@ -20,7 +20,7 @@ const data = [
 const HelpSection = () => {
   return (
     <section
-      className="relative flex items-center min-h-[60vh] py-20 px-4 font-inter text-white"
+      className="relative flex items-center min-h-[60vh] py-20 mt-[100px]  font-inter text-white"
       style={{
         backgroundImage: `url('/images/02.png')`,
         backgroundSize: "cover",
@@ -28,15 +28,17 @@ const HelpSection = () => {
       }}
     >
       {/* Overlay */}
-      <div className="absolute inset-0 bg-[#111111]/98"></div>
+      <div className="absolute inset-0 bg-[#111111]/95"></div>
 
       {/* Content */}
-      <div className="relative max-w-7xl w-full mx-auto">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-16">
+      <div className="relative w-full px-[20px] md:px-[30px] lg:px-[30px] xl:max-w-7xl xl:mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-14 lg:gap-20">
 
           {data.map((item) => (
-            <div key={item.id} className="flex flex-col items-center text-center">
-              
+            <div
+              key={item.id}
+              className="flex flex-col items-center text-center"
+            >
               {/* Image */}
               <div className="w-full overflow-hidden rounded-2xl">
                 <Image
@@ -49,15 +51,14 @@ const HelpSection = () => {
               </div>
 
               {/* Title */}
-              <h2 className="text-white text-2xl md:text-[28px] font-semibold mt-6">
+              <h2 className="text-white text-2xl md:text-[28px] lg:text-[30px] font-semibold mt-6">
                 {item.title}
               </h2>
 
               {/* Description */}
-              <p className="text-gray-300 mt-3 leading-relaxed max-w-sm mx-auto">
+              <p className="text-gray-300 mt-3 leading-relaxed max-w-sm mx-auto md:max-w-md">
                 {item.desc}
               </p>
-
             </div>
           ))}
 
