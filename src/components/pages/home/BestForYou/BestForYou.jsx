@@ -42,7 +42,7 @@ const BestForYou = () => {
 
           {/* Text Content */}
           <div className="lg:w-1/2 flex flex-col justify-start w-full">
-            <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold mb-4 leading-snug">
+            <h2 className="common_title mb-4 leading-snug">
               We are the best for you
             </h2>
             <p className="text-gray-300 text-base sm:text-lg md:text-xl mb-6 max-w-full sm:max-w-xl leading-relaxed">

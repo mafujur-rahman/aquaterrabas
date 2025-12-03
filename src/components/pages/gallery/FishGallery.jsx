@@ -1,60 +1,71 @@
-// components/FishGallery.jsx
-import Image from 'next/image';
+"use client";
+import Image from "next/image";
+import React from "react";
 
-const FishGallery = () => {
-    return (
-        <section className="py-20">
-            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div className="grid gap-4 auto-rows-min grid-cols-2 sm:grid-cols-3">
+export default function FishGallery() {
+  const images = [
+    "/images/fish-gallery/fish-1.jpg",
+    "/images/fish-gallery/fish-2.jpg",
+    "/images/fish-gallery/fish-3.jpg",
+    "/images/fish-gallery/fish-4.jpg",
+    "/images/fish-gallery/fish-5.jpg",
+    "/images/fish-gallery/fish-6.jpg",
+    "/images/fish-gallery/fish-7.jpg",
+    "/images/fish-gallery/fish-8.jpg",
+    "/images/fish-gallery/fish-9.jpg",
+    "/images/fish-gallery/fish-10.jpg",
+  ];
 
-                    {/* Image 1 (Tall, Spanning 2 rows) */}
-                    <div className="relative col-span-1 row-span-2 rounded-lg overflow-hidden shadow-md">
-                        <Image src="/images/fish-gallery/fish-1.jpg" alt="Discus Fish" layout="fill" objectFit="cover" className="rounded-lg" />
-                    </div>
+  return (
+    <section className="w-full my-[100px] px-[20px] md:px-[30px] lg:px-[30px] xl:max-w-7xl xl:mx-auto">
+      <div className="w-full grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
 
-                    {/* Image 2 (Normal) */}
-                    <div className="relative col-span-1 rounded-lg overflow-hidden shadow-md aspect-w-1 aspect-h-1">
-                        <Image src="/images/fish-gallery/fish-2.jpg" alt="Discus Fish" layout="fill" objectFit="cover" className="rounded-lg" />
-                    </div>
+        {/* LEFT COLUMN */}
+        <div className="flex flex-col gap-4">
+          <div className="h-[410px] relative rounded-xl overflow-hidden">
+            <Image src={images[0]} alt="" fill className="object-cover" />
+          </div>
 
-                    {/* Image 3 (Normal) */}
-                    <div className="relative col-span-1 rounded-lg overflow-hidden shadow-md aspect-w-1 aspect-h-1">
-                        <Image src="/images/fish-gallery/fish-3.jpg" alt="Discus Fish" layout="fill" objectFit="cover" className="rounded-lg" />
-                    </div>
+          <div className="h-[240px] relative rounded-xl overflow-hidden">
+            <Image src={images[1]} alt="" fill className="object-cover" />
+          </div>
 
-                    {/* Image 4 (Normal) */}
-                    <div className="relative col-span-1 rounded-lg overflow-hidden shadow-md aspect-w-1 aspect-h-1">
-                        <Image src="/images/fish-gallery/fish-4.jpg" alt="Discus Fish" layout="fill" objectFit="cover" className="rounded-lg" />
-                    </div>
+          <div className="h-[240px] relative rounded-xl overflow-hidden">
+            <Image src={images[2]} alt="" fill className="object-cover" />
+          </div>
+        </div>
 
-                    {/* Image 5 (Wide, Spanning 2 columns) */}
-                    <div className="relative col-span-2 row-span-2 rounded-lg overflow-hidden shadow-md">
-                        <Image src="/images/fish-gallery/fish-5.jpg" alt="Discus Fish" layout="fill" objectFit="cover" className="rounded-lg" />
-                    </div>
+        {/* MIDDLE COLUMN */}
+        <div className="flex flex-col gap-4">
+          <div className="h-[210px] relative rounded-xl overflow-hidden">
+            <Image src={images[3]} alt="" fill className="object-cover" />
+          </div>
 
-                    {/* Image 6 (Normal) */}
-                    <div className="relative col-span-1 rounded-lg overflow-hidden shadow-md aspect-w-1 aspect-h-1">
-                        <Image src="/images/fish-gallery/fish-6.jpg" alt="Discus Fish" layout="fill" objectFit="cover" className="rounded-lg" />
-                    </div>
+          <div className="h-[480px] relative rounded-xl overflow-hidden">
+            <Image src={images[4]} alt="" fill className="object-cover" />
+          </div>
 
-                    {/* Image 7 (Normal) */}
-                    <div className="relative col-span-1 rounded-lg overflow-hidden shadow-md aspect-w-1 aspect-h-1">
-                        <Image src="/images/fish-gallery/fish-7.jpg" alt="Discus Fish" layout="fill" objectFit="cover" className="rounded-lg" />
-                    </div>
+          <div className="h-[200px] relative rounded-xl overflow-hidden">
+            <Image src={images[5]} alt="" fill className="object-cover" />
+          </div>
+        </div>
 
-                    {/* Image 8 (Normal) */}
-                    <div className="relative col-span-1 rounded-lg overflow-hidden shadow-md aspect-w-1 aspect-h-1">
-                        <Image src="/images/fish-gallery/fish-8.jpg" alt="Discus Fish" layout="fill" objectFit="cover" className="rounded-lg" />
-                    </div>
+        {/* RIGHT COLUMN */}
+        <div className="flex flex-col gap-4">
+          <div className="h-[200px] relative rounded-xl overflow-hidden">
+            <Image src={images[6]} alt="" fill className="object-cover" />
+          </div>
 
-                    {/* Image 9 (Tall, spanning 2 rows, and wide, spanning 2 columns) */}
-                    <div className="relative col-span-2 row-span-2 rounded-lg overflow-hidden shadow-md">
-                        <Image src="/images/fish-gallery/fish-9.jpg" alt="Discus Fish" layout="fill" objectFit="cover" className="rounded-lg" />
-                    </div>
-                </div>
-            </div>
-        </section>
-    );
-};
+          <div className="h-[450px] relative rounded-xl overflow-hidden">
+            <Image src={images[7]} alt="" fill className="object-cover" />
+          </div>
 
-export default FishGallery;
+          <div className="h-[240px] relative rounded-xl overflow-hidden">
+            <Image src={images[8]} alt="" fill className="object-cover" />
+          </div>
+        </div>
+
+      </div>
+    </section>
+  );
+}

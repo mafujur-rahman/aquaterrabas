@@ -8,7 +8,7 @@ const About = () => {
       <div className="w-full px-[20px] md:px-[30px] lg:px-[30px] xl:max-w-7xl xl:mx-auto flex flex-col md:flex-row items-center gap-8 md:gap-12">
         {/* Text Content */}
         <div className="flex-1 text-center md:text-left">
-          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-semibold mb-4 sm:mb-6">
+          <h2 className="common_title mb-4 sm:mb-6">
             Our design is as natural as possible
           </h2>
           <p className="text-gray-600 mb-6 sm:mb-8 leading-relaxed text-sm sm:text-base md:text-lg">

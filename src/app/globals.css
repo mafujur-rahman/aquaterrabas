@@ -24,3 +24,9 @@ body {
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
 }
+
+
+
+.common_title {
+  @apply text-3xl md:text-4xl lg:text-5xl font-bold
+}

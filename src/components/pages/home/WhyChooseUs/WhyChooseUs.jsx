@@ -72,7 +72,7 @@ const WhyChooseUs = () => {
   return (
     <section ref={sectionRef} className="bg-white text-black mt-[100px]">
       <div className="w-full px-[20px] md:px-[30px] lg:px-[30px] xl:max-w-7xl xl:mx-auto text-center">
-        <h2 className="text-3xl sm:text-4xl lg:text-5xl font-semibold mb-4">
+        <h2 className="common_title mb-4">
           Why Choose Us?
         </h2>
         <p className="text-gray-600 mb-12 sm:mb-16 text-base sm:text-lg md:text-xl max-w-4xl mx-auto leading-relaxed">
@@ -82,7 +82,7 @@ const WhyChooseUs = () => {
           that are as practical as they are stunning.
         </p>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-4 lg:gap-6">
           {features.map((item, index) => (
             <div
               key={index}

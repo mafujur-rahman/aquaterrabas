@@ -92,7 +92,7 @@ const Achievement = () => {
       <div className="relative z-10 py-12 md:py-16 lg:py-20 px-[20px] md:px-[30px] lg:px-[30px] xl:max-w-7xl xl:mx-auto">
         <div className="text-center achievement-content">
           {/* Title */}
-          <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-5xl font-extrabold mb-6 text-white tracking-tight">
+          <h2 className="common_title mb-6 text-white tracking-tight">
             Our Achievement
           </h2>
 

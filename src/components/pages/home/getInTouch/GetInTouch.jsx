@@ -13,7 +13,7 @@ export function GetInTouch() {
             
             <div className="relative max-w-7xl mx-auto px-4 flex flex-col md:flex-row items-center justify-between">
                 <div className="text-white max-w-2xl mb-8 md:mb-0">
-                    <h2 className="text-5xl font-bold mb-4">Get in Touch</h2>
+                    <h2 className="common_title mb-4">Get in Touch</h2>
                     <p className="text-lg leading-relaxed">
                         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin tellus sem, maximus eget ullamcorper a, aliquam facilisis a,que. Praesent placerat niibh, un velit malesuada, at laoreet odio tincidunt. Praesent et pellentesque nibh, in maximus dolor. Curabitue faucibus tellus vel tempor finbus.
                     </p>

@@ -45,7 +45,7 @@ const Gallery = () => {
     <section className="mt-[100px] bg-white">
       <div className="w-full px-[20px] md:px-[30px] lg:px-[30px] xl:max-w-7xl xl:mx-auto">
         {/* Section Header */}
-        <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-800 text-center mb-4">
+        <h2 className="common_title text-gray-800 text-center mb-4">
           Gallery
         </h2>
         <p className="text-center text-gray-600 text-sm sm:text-base md:text-lg mb-12 max-w-4xl mx-auto">
@@ -55,7 +55,7 @@ const Gallery = () => {
         </p>
 
         {/* Gallery Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 sm:gap-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6  md:gap-4 lg:gap-6">
           {galleryItems.map((item, index) => (
             <div
               key={index}

@@ -31,7 +31,7 @@ const Banner = () => {
             </p>
 
             {/* Main Heading */}
-            <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-extrabold text-white leading-snug sm:leading-tight md:leading-tight mb-6 sm:mb-8 drop-shadow-lg">
+            <h1 className="text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-extrabold text-white leading-snug sm:leading-tight md:leading-tight mb-6 sm:mb-8 drop-shadow-lg">
               Easy to setup, Easy to care & Easy to maintain
             </h1>
 
