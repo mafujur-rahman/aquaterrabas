@@ -12,7 +12,7 @@ export default function ContactArea() {
                 <div className="flex flex-col lg:flex-row bg-white rounded-lg">
                     {/* Left Section - Contact Info */}
                     <div className="lg:w-1/2 p-8 lg:pr-12">
-                        <h2 className="text-4xl font-semibold text-gray-800 mb-4">Get in touch</h2>
+                        <h2 className="common_title mb-4">Get in touch</h2>
                         <p className="text-gray-600 mb-8 max-w-md">
                             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus,
                             luctus nec ullamcorper mattis, pulvinar dapibus leo.

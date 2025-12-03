@@ -41,7 +41,7 @@ const PlanSection = () => {
 
         {/* Section Header */}
         <div className="text-center mb-16">
-          <h1 className="text-4xl md:text-5xl font-bold text-gray-800 mb-8">
+          <h1 className="common_title text-gray-800 mb-8">
             Choose Your Plan
           </h1>
           <p className="text-gray-600 max-w-4xl md:max-w-6xl mx-auto leading-relaxed">
@@ -53,7 +53,7 @@ const PlanSection = () => {
         </div>
 
         {/* Cards Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 text-center">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 md:gap-4 lg:gap-6 text-center">
 
           {plans.map((plan, index) => (
             <div
@@ -64,7 +64,7 @@ const PlanSection = () => {
                 {plan.name}
               </h2>
 
-              <p className="text-4xl md:text-5xl font-bold text-[#49b94e] mb-4 md:mb-6">
+              <p className="common_title text-[#49b94e] mb-4 md:mb-6">
                 {plan.price}
               </p>
 

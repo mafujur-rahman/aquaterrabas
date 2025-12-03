@@ -84,7 +84,7 @@ export function Experience() {
 
                     {/* Experience Text */}
                     <div className="flex flex-col justify-center">
-                        <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-4 leading-tight">
+                        <h2 className="common_title mb-4 leading-tight">
                             Our Experience so Far
                         </h2>
                         <p className="text-base sm:text-lg text-gray-600 leading-relaxed">
@@ -94,7 +94,7 @@ export function Experience() {
 
                     {/* Projects Text */}
                     <div className="flex flex-col justify-center">
-                        <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-4 leading-tight">
+                        <h2 className="common_title mb-4 leading-tight">
                             Our Projects
                         </h2>
                         <p className="text-base sm:text-lg text-gray-600 leading-relaxed">

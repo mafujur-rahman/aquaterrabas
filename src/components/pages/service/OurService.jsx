@@ -45,7 +45,7 @@ const OurService = () => {
       <div className="relative z-10 w-full px-[20px] md:px-[30px] lg:px-[30px] xl:max-w-7xl xl:mx-auto">
         {/* Header */}
         <div className="text-center mb-14">
-          <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
+          <h2 className="common_title text-white mb-4">
             Our Service
           </h2>
           <p className="text-lg text-gray-300 max-w-4xl mx-auto">
@@ -55,7 +55,7 @@ const OurService = () => {
         </div>
 
         {/* Cards Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-4 lg:gap-6">
           {services.map((service, index) => (
             <div
               key={index}

@@ -23,7 +23,7 @@ export function Review() {
         <div className="px-[20px] md:px-[30px] lg:px-[30px] xl:max-w-7xl xl:mx-auto mt-[100px] text-center">
             
             {/* Heading */}
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold">
+            <h2 className="common_title">
                 Our Review
             </h2>
 
@@ -33,7 +33,7 @@ export function Review() {
             </p>
 
             {/* Cards Grid */}
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 mt-12">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-4 lg:gap-6 mt-12">
                 <ReviewCard
                     name="Donna Yen"
                     role="Freelancer"

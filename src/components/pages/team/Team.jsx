@@ -84,7 +84,7 @@ const Team = () => {
 
                 {/* Header */}
                 <div className="text-center mb-12 max-w-2xl mx-auto">
-                    <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 mb-4">
+                    <h1 className="common_title  mb-4">
                         Our Experienced Crew
                     </h1>
                     <p className="text-sm sm:text-base lg:text-lg text-gray-500 leading-relaxed">
@@ -93,7 +93,7 @@ const Team = () => {
                 </div>
 
                 {/* Grid */}
-                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-4 lg:gap-6 ">
                     {teamMembers.map((member) => (
                         <TeamCard key={member.id} member={member} />
                     ))}

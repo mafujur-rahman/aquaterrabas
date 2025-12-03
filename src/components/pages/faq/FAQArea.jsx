@@ -50,7 +50,7 @@ const FAQArea = () => {
 
           {/* Text */}
           <div className="w-full md:w-1/2">
-            <h2 className="text-3xl sm:text-4xl md:text-[38px] font-semibold text-[#0F172A] mb-4">
+            <h2 className="common_title text-[#0F172A] mb-4">
               Whats in your mind?
             </h2>
             <p className="text-gray-600 leading-relaxed max-w-full md:max-w-md">

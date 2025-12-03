@@ -7,7 +7,7 @@ const HowWeWork = () => {
 
                 {/* Left Section: Text Content */}
                 <div className="lg:w-1/2">
-                    <h2 className="text-4xl sm:text-5xl font-bold text-gray-800 mb-6">
+                    <h2 className="common_title text-gray-800 mb-6">
                         How We Work
                     </h2>
                     <p className="text-gray-600 mb-10 leading-relaxed">
@@ -19,7 +19,7 @@ const HowWeWork = () => {
 
                         {/* Concept Planning */}
                         <div className="flex flex-col sm:flex-row sm:items-start sm:space-x-6 space-y-3 sm:space-y-0">
-                            <div className="text-4xl sm:text-5xl font-bold text-[#49b94e] flex-shrink-0">01</div>
+                            <div className="common_title text-[#49b94e] flex-shrink-0">01</div>
                             <div>
                                 <h3 className="text-lg sm:text-xl font-semibold text-gray-800 mb-1">Concept Planning</h3>
                                 <p className="text-gray-600 leading-relaxed">
@@ -31,7 +31,7 @@ const HowWeWork = () => {
 
                         {/* Material preparation */}
                         <div className="flex flex-col sm:flex-row sm:items-start sm:space-x-6 space-y-3 sm:space-y-0">
-                            <div className="text-4xl sm:text-5xl font-bold text-[#49b94e] flex-shrink-0">02</div>
+                            <div className="common_title text-[#49b94e] flex-shrink-0">02</div>
                             <div>
                                 <h3 className="text-lg sm:text-xl font-semibold text-gray-800 mb-1">Material preparation</h3>
                                 <p className="text-gray-600 leading-relaxed">
@@ -43,7 +43,7 @@ const HowWeWork = () => {
 
                         {/* Executing Project */}
                         <div className="flex flex-col sm:flex-row sm:items-start sm:space-x-6 space-y-3 sm:space-y-0">
-                            <div className="text-4xl sm:text-5xl font-bold text-[#49b94e] flex-shrink-0">03</div>
+                            <div className="common_title text-[#49b94e] flex-shrink-0">03</div>
                             <div>
                                 <h3 className="text-lg sm:text-xl font-semibold text-gray-800 mb-1">Executing Project</h3>
                                 <p className="text-gray-600 leading-relaxed">

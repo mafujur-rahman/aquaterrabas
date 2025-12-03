@@ -8,20 +8,20 @@ export function ServiceAbout() {
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-y-12 gap-x-12 lg:gap-x-16">
 
                     {/* Image */}
-                    <div className="relative overflow-hidden rounded-3xl shadow-lg">
+                    <div className="relative overflow-hidden  ">
                         <Image
                             src="/images/service-about.jpg"
                             alt="Experienced Team"
                             width={600}
                             height={350}
-                            className="w-full h-auto max-h-[380px] object-cover"
+                            className="w-full h-auto max-h-[380px] object-cover rounded-2xl"
                             priority
                         />
                     </div>
 
                     {/* Text Content */}
                     <div className="flex flex-col justify-start">
-                        <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-4 leading-tight">
+                        <h2 className="common_title mb-4 leading-tight">
                             Design Full with passion
                         </h2>
 

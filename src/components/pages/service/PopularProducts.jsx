@@ -47,7 +47,7 @@ const PopularProducts = () => {
       <div className="w-full px-[20px] md:px-[30px] lg:px-[30px] xl:max-w-7xl xl:mx-auto">
 
         {/* Heading */}
-        <h2 className="text-4xl md:text-5xl font-bold text-center mb-4">
+        <h2 className="common_title text-center mb-4">
           Popular Among Customers
         </h2>
 
@@ -57,7 +57,7 @@ const PopularProducts = () => {
         </p>
 
         {/* GRID */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-4 lg:gap-6">
 
           {products.map((product, index) => (
             <div key={index} className=" overflow-hidden flex flex-col">

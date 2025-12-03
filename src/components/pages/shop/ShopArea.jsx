@@ -70,9 +70,9 @@ const ProductCard = ({ product }) => {
 //  Section
 const Section = ({ title, items }) => (
   <div className="mb-[100px]">
-    <h2 className="text-4xl font-bold text-center mb-10">{title}</h2>
+    <h2 className="common_title text-center mb-10">{title}</h2>
 
-    <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-6">
+    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-4 lg:gap-6">
       {items.map((p) => (
         <ProductCard key={p.id} product={p} />
       ))}
